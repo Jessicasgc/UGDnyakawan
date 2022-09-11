@@ -8,29 +8,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ugdnyakawan.entity.Dosen
+import com.example.ugdnyakawan.entity.ListMakanan
 
-class FragmentDosen : Fragment() {
+class FragmentMakanan : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container:ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_dosen, container, false)
+        return inflater.inflate(R.layout.fragment_makanan, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
         val layoutManager = LinearLayoutManager(context)
-        val adapter : RVDosenAdapter = RVDosenAdapter(Dosen.listOfDosen)
+        val adapter : RVMakananAdapter = RVMakananAdapter(ListMakanan.listOfMakanan)
 
-        val rvDosen : RecyclerView = view.findViewById(R.id.rv_dosen)
+        val rvMakanan : RecyclerView = view.findViewById(R.id.rv_makanan)
 
-        rvDosen.layoutManager = layoutManager
+        rvMakanan.layoutManager = layoutManager
 
-        rvDosen.setHasFixedSize(true)
+        rvMakanan.setHasFixedSize(true)
 
-        rvDosen.adapter = adapter
+        rvMakanan.adapter = adapter
 
     }
 }

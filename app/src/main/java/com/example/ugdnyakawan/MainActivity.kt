@@ -2,10 +2,10 @@ package com.example.ugdnyakawan
 
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var inputUsername: TextInputLayout
     private lateinit var inputPassword: TextInputLayout
     private lateinit var mainLayout: ConstraintLayout
-
+    lateinit var bundle: Bundle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,20 +40,38 @@ class MainActivity : AppCompatActivity() {
             val username : String = inputUsername.getEditText()?.getText().toString()
             val password : String = inputPassword.getEditText()?.getText().toString()
 
-            if(username.isEmpty()){
+
+
+            val intent = intent
+            val bundle = intent.extras
+            val user: String? = bundle?.getString("username")
+            val pass: String? = bundle?.getString("password")
+
+            if(username==user && password==pass) {
+                val intent = Intent(this, HomeActivity1::class.java)
+                startActivity(intent)
+                checkLogin = true
+
+            }else if(username!=user) {
+                inputUsername.setError("Username must be filled correctly")
+                checkLogin = false
+            }
+
+            else if(password!=pass) {
+                inputPassword.setError("Password must be filled correctly")
+                checkLogin = false
+            }
+            else if(username.isEmpty()){
                 inputUsername.setError("Username must be filled with text")
                 checkLogin = false
             }
 
-            if(password.isEmpty()){
+            else if(password.isEmpty()){
                 inputPassword.setError("Username must be filled with text")
                 checkLogin = false
             }
 
-            if (username == "admin" && password == "0787") checkLogin = true
-            if (!checkLogin) return@OnClickListener
-            val moveHome = Intent(this@MainActivity, HomeActivity::class.java)
-            startActivity(moveHome)
         })
     }
+
 }

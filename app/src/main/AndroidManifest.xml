@@ -14,13 +14,11 @@
         android:theme="@style/Theme.UGDnyakawan"
         tools:targetApi="31">
         <activity
-            android:name=".AfterRegistrasiActivity"
-            android:exported="false"/>
-
+            android:name=".HomeActivity1"
+            android:exported="false" />
         <activity
             android:name=".RegistrasiActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="false" />

@@ -15,6 +15,7 @@ class RegistrasiActivity : AppCompatActivity() {
     private lateinit var register: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrasi)
 
@@ -25,19 +26,20 @@ class RegistrasiActivity : AppCompatActivity() {
         notelp = findViewById(R.id.etNoTelp)
         register = findViewById(R.id.btnRegister)
 
-        register.setOnClickListener {
-            val intent = Intent(this, AfterRegistrasiActivity::class.java)
-            val mBundle = Bundle()
-            //memasukkan data ke dalam bundle
-            mBundle.putString("username", username.text.toString())
-            mBundle.putString("password", password.text.toString())
-            mBundle.putString("email", email.text.toString())
-            mBundle.putString("tglLahir", tglLahir.text.toString())
-            mBundle.putString("notelp", notelp.text.toString())
-            //melakukan intent dengan memanggil bundle
-            intent.putExtra("register", mBundle)
 
-            startActivity(intent)
+        register.setOnClickListener {
+            val intentToLogin = Intent(this, MainActivity::class.java)
+            val bundle = Bundle()
+            //memasukkan data ke dalam bundle
+            bundle.putString("username", username.text.toString())
+            bundle.putString("password", password.text.toString())
+            bundle.putString("email", email.text.toString())
+            bundle.putString("tglLahir", tglLahir.text.toString())
+            bundle.putString("notelp", notelp.text.toString())
+            //melakukan intent dengan memanggil bundle
+            intentToLogin.putExtras(bundle)
+
+            startActivity(intentToLogin)
         }
     }
 }

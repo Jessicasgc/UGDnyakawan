@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentDosen">
+    tools:context=".FragmentMinuman">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_dosen"
+        android:id="@+id/rv_minuman"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/rv_item_dosen"/>
+        tools:listitem="@layout/rv_item_minuman"/>
 
 </FrameLayout>

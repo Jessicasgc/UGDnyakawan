@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/menu_mahasiswa"
-        android:title="Mahasiswa"/>
+    <item android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"/>
 
-    <item android:id="@+id/menu_dosen"
-        android:title="Dosen"/>
+    <item android:id="@+id/menu_minuman"
+        android:icon="@drawable/ic_drink"
+        android:title="List Menu Minuman"/>
+
+    <item android:id="@+id/menu_makanan"
+        android:icon="@drawable/ic_food"
+        android:title="List Menu Makanan"/>
 
     <item android:id="@+id/menu_exit"
+        android:icon="@drawable/ic_login"
         android:title="Exit App"/>
 
 </menu>

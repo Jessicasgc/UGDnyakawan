@@ -13,14 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UGDnyakawan"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Notebeli"
+            android:exported="false"
+            android:label="@string/title_activity_notebeli"
+            android:theme="@style/Theme.UGDnyakawan.NoActionBar" />
         <activity
             android:name=".RegistrasiActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".HomeActivity1"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -1,6 +1,5 @@
 package com.example.ugdnyakawan
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setTitle("User Login")
+        supportActionBar?.hide()
 
 
         inputUsername = findViewById(R.id.tilUsername)
